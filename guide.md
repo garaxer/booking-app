@@ -13,4 +13,4 @@ $ nest g controller user
 $ nest g service user
 ```
 
-2.
+2. (optional, add swagger and openapi)
