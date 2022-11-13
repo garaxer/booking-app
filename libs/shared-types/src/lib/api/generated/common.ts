@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * Booking Api
- * The API for Nx Psych App
+ * Booking api
+ * The API for booking app
  *
  * The version of the OpenAPI document: 1.0.0
  * 
