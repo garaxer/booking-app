@@ -73,3 +73,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Swagger
+After running the application, openapi.json will get created. You can then generate types from that using `npm run gen-api-client`
+You can also head to this url to look at the swagger docs.
+http://localhost:3333/docs/

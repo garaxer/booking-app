@@ -1,4 +1,4 @@
-import { Injectable, Scope, Inject } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import { Booking, CreateBookingDto } from './dto/booking.dto';
 import { REQUEST } from '@nestjs/core';
 import { Request } from 'express';

@@ -4,8 +4,6 @@
     "/": {
       "get": {
         "operationId": "AppController_getHello",
-        "summary": "",
-        "description": "",
         "parameters": [],
         "responses": {
           "200": {
@@ -24,8 +22,6 @@
     "/booking": {
       "post": {
         "operationId": "BookingController_create",
-        "summary": "",
-        "description": "",
         "parameters": [],
         "requestBody": {
           "required": true,
@@ -62,8 +58,6 @@
       },
       "get": {
         "operationId": "BookingController_get",
-        "summary": "",
-        "description": "",
         "parameters": [],
         "responses": {
           "200": {
