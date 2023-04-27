@@ -4,12 +4,13 @@ import provider from './sls/provider';
 import functions from './sls/functions';
 
 const serverlessConfiguration: AWS = {
-  service: 'gary-booking-app',
-  variablesResolutionMode: '20210326',
-  plugins: [],
+  service: 'gary-nest-booking-app',
+  frameworkVersion: '3',
+  plugins: ['serverless-plugin-typescript'],
   package: {
     individually: true,
     excludeDevDependencies: true,
+    patterns: ['!libs/**'],
   },
   custom,
   provider,

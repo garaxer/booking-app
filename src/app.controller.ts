@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/config')
+  config() {
+    return { profile: process.env.PROFILE, stage: process.env.STAGE };
+  }
 }

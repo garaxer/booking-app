@@ -7,6 +7,13 @@ const functions = {
     events: [
       {
         http: {
+          path: '/',
+          method: 'any',
+          cors: true,
+        },
+      },
+      {
+        http: {
           path: '/{uri+}',
           method: 'any',
           cors: true,

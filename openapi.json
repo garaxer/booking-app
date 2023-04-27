@@ -7,14 +7,18 @@
         "parameters": [],
         "responses": {
           "200": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": ""
+          }
+        }
+      }
+    },
+    "/config": {
+      "get": {
+        "operationId": "AppController_config",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
           }
         }
       }
@@ -40,16 +44,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/BookingDto"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
                 }
               }
             }
@@ -89,47 +83,11 @@
     "schemas": {
       "CreateBookingDto": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "title",
-          "users"
-        ]
+        "properties": {}
       },
       "BookingDto": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "required": [
-          "id",
-          "title",
-          "users"
-        ]
+        "properties": {}
       }
     }
   }

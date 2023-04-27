@@ -75,7 +75,73 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 
+### Running
+`npm run start:dev`
+
+### Deploying
+Check everything is running fine using `npm run offline` (not the base url doesn't work with serverless offline e.g '/' but will when deployed)
+then `npm run deploy:fresh` or `npm run deploy` if updating.
+
 ## Swagger
-After running the application, openapi.json will get created. You can then generate types from that using `npm run gen-api-client`
+After running the application, openapi.json will get created. You can then generate types from that using `npm run gen-api-client` to use in a front end application.
 You can also head to this url to look at the swagger docs.
 http://localhost:3333/docs/
+
+
+### Plan
+Goal: Have a sellable generic booking model, A user can create a service and a customer can make bookings against the service. Front end will show one service at a time serviceName/book
+1. Have bookings and users. Can hardcode time slots and can show which ones have bookings
+2. Service and timeslots, 1 service has many time slots which will have many bookings.
+3. A business will have many services.
+
+```mermaid
+erDiagram
+    SCHEDULES ||--o{ SERVICE : hasMany
+    SCHEDULES {
+
+    }
+    SERVICE {
+        id string
+        serviceType string
+        times DateList
+        sections stringList
+    }
+
+    SERVICE ||--o{ TIMESLOTS : hasMany
+    SERVICE {
+        id string
+        duration number
+        serviceType string
+        sections stringList
+        createdAt Date
+        updatedAt Date
+    } 
+    TIMESLOTS ||--o{ BOOKINGS : creates
+    TIMESLOTS {
+        id string
+        time Date
+    }
+    BOOKINGS {
+        time Date
+        selectedMenuOptions List
+        numOfPeople number
+        customerNotes string
+        managerNotes string
+        created_at Date
+        updated_at Date
+    }
+    CUSTOMER ||--o{ BOOKINGS : places
+    CUSTOMER {
+        id string PK
+        firstName string
+        lastName string
+        email string
+        phone string
+    }
+```
+
+
+### Todos
+1. database
+
+10. domain name.
