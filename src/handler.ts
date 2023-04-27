@@ -14,6 +14,7 @@ async function bootstrap(): Promise<Handler> {
     new ExpressAdapter(expressApp),
   );
   //   swagger(app); // only locally
+  app.enableCors();
   await app.init();
   return http(expressApp);
 }
