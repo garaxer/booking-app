@@ -143,6 +143,5 @@ erDiagram
 
 ### Todos
 0. pass auth0 params in -- maunally add to ssm, setup permissions, add key to provder.ts
-1. database
-
+1. database using prisma
 10. domain name.

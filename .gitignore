@@ -37,3 +37,4 @@ lerna-debug.log*
 
 /.build
 /.serverless
+notes.txt
