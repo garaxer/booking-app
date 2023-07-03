@@ -3,7 +3,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { writeFileSync } from 'graceful-fs';
 import path from 'path';
 
-export function swagger(app: INestApplication) {
+export function swagger(app: INestApplication, createLocalFile = true) {
   const apiSwaggerOptions = new DocumentBuilder()
     .setTitle('Booking api')
     .setDescription('The API for booking app')
@@ -13,8 +13,10 @@ export function swagger(app: INestApplication) {
   SwaggerModule.setup('/docs', app, apiSwaggerDocs);
 
   // create openapi.json
-  const outputPath = path.resolve(process.cwd(), 'openapi.json');
-  writeFileSync(outputPath, JSON.stringify(apiSwaggerDocs, null, 2), {
-    encoding: 'utf8',
-  });
+  if (createLocalFile) {
+    const outputPath = path.resolve(process.cwd(), 'openapi.json');
+    writeFileSync(outputPath, JSON.stringify(apiSwaggerDocs, null, 2), {
+      encoding: 'utf8',
+    });
+  }
 }
