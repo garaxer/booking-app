@@ -23,7 +23,7 @@
     "offline": "serverless offline start --config serverless.offline.ts --stage=local --reloadHandler",
     "deploy:fresh": "serverless deploy --verbose --stage=latest",
     "deploy": "serverless deploy --verbose --stage=latest -f execute",
-    "gen-api-client": "sh ./scripts/gen-api-client.sh",
+    "gen-api-client": "sh ./bin/gen-api-client.sh",
     "gen-api-client-win": "openapi-generator-cli generate   -i ./openapi.json   -g typescript-axios   -o ./libs/shared-types/generated   --package-name api   --additional-properties=useSingleRequestParameter=true"
   },
   "dependencies": {
